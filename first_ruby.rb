@@ -4,5 +4,8 @@
 puts "hello world!"
 
 # pっていうメソッドがあるらしい
-# オブジェクトのダンプだから、クオートで囲まれてる
+# オブジェクトのダンプだから、出力がクオートで囲まれてる
 p "hello world!"
+
+# Stringオブジェクトのメソッドたち
+p "hello world!".methods
