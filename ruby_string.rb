@@ -41,3 +41,24 @@ p `#{find_cmd_str}`	# これは効く
 # エスケープが多い場合に使うと有効
 p %q!hogehoge!	# hogehoge
 print %@boo"/"boo\n@	# boo"/"boo 
+
+# ヒアドキュメント
+heredocument = <<EOS # <<のあとにスペースが入っちゃいけない
+SELECT *
+FROM hoge
+WHERE create_date < '2012-12-16 00:00:00'
+EOS
+print heredocument
+# ヒアドキュメントは、文字列リテラルを突っ込めるところならどこでもいいっぽい(オライリーのサンプルコード参照)
+# ヒアドキュメントをはじめるときの文字列を囲むクォートによって、バックスラッシュの挙動が変わるらしい
+here1 = <<'EOS'
+hoge\nhoge
+EOS
+p here1 # バックスラッシュが展開されない
+here2 = <<"EOS" 
+hoge\nhoge
+EOS
+p here2 # バックスラッシュが展開される.ちなみに、クォートを省略すると、ダブルクォートと同じ挙動になる
+
+# 文字列の基礎はこんなかんじか……
+# 残りは正規表現とか、色々と応用系
