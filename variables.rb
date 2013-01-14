@@ -71,3 +71,26 @@ CONST_HUGA_STRING = "huga\n"
 print CONST_HUGA_STRING
 CONST_HUGA_STRING = "boo\n"	# 実は変更できるんだけど、変更するとrubyの処理系から警告が出る
 print CONST_HUGA_STRING		# 変更されてる
+
+# 擬似変数と呼ばれるものは、以下の7つ
+# nil		値がない、という状態を示すオブジェクト,nullと違い、オブジェクトが無いということを示すオブジェクト
+# true		真値。Rubyでは、nilと下記のfalse以外はすべて真として評価されるが、これはその代表
+# false		偽値。nilとfalseのみが、評価式の偽値として扱われる
+# self		「現在の」オブジェクトを表す値。Java,C#のthisと似た働き。OOにおける、メッセージのレシーバ。
+# __FILE__	呼び出された場所のソースファイル名を表す。変更不可の値
+# __LINE__	呼び出された場所の行番号を表す。Integerオブジェクトの参照
+# __ENCODING__	Ruby1.9以降で採用。呼び出された場所のソースコードのエンコーディングを表す
+
+
+# 変数宣言において、大文字小文字は区別される
+# したがって、big_endianとbig_Endianという変数は別物として扱われる
+# また、慣習として変数名にはスネークケースを用いることが推奨されている。ただし、クラス名のみはパスカルケースが推奨される
+
+# Rubyの予約語
+# BEGIN	class	ensure	nil	self	when
+# END	def	false	not	super	while
+# alias	defined?	for	or	then	yield
+# and	do	if	redo	true
+# begin	else	in	rescue	undef
+# break	elsif	module	retry	unless
+# case	end	next	return	untill
