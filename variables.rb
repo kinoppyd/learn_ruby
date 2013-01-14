@@ -80,6 +80,9 @@ print CONST_HUGA_STRING		# 変更されてる
 # __FILE__	呼び出された場所のソースファイル名を表す。変更不可の値
 # __LINE__	呼び出された場所の行番号を表す。Integerオブジェクトの参照
 # __ENCODING__	Ruby1.9以降で採用。呼び出された場所のソースコードのエンコーディングを表す
+p self		# => main
+p __FILE__	# => "variable.rb"
+p __LINE__	# => 85
 
 
 # 変数宣言において、大文字小文字は区別される
